@@ -1,34 +1,32 @@
 ---
 v: 3
 cat: bcp
-number: '2418'
-obsoletes: '1603'
+obsoletes: '2418'
 docname: draft-ietf-rsalz-rfc2418bis-latest
 seriesno: '25'
 submissiontype: IETF
 pi:
   compact: 'yes'
-  text-list-symbols: "--o*+"
   subcompact: 'no'
+  symrefs: 'yes'
   sortrefs: 'yes'
-  symrefs: 'no'
-  strict: 'yes'
   toc: 'yes'
+  tocdepth: '4'
+  rfcedstyle: 'yes'
 title: IETF Working Group Guidelines and Procedures
 abbrev: Working Group Guidelines
-# date: 1998-09
 author:
 - ins: R. Salz
   name: Rich Salz
   org: Akamai Technologies
-- ins: J. Klensin
+- ins: J. C. Klensin
   name: John Klensin
-informative:
-  RFC2028: RFC2028
-  RFC2282: RFC2282
-  RFC1796: RFC1796
-  RFC2223: RFC2223
-  RFC2119: RFC2119
+normative:
+  PROCESS: BCP9
+  BCP11: BCP11
+  BCP10: BCP10
+  NOTALLSTD: RFC1796
+  RPCSTYLE: RFC7322
 
 --- abstract
 
@@ -38,7 +36,7 @@ developing and reviewing specifications intended as Internet
 Standards. IETF activities are organized into working groups (WGs).
 This document describes the guidelines and procedures for formation
 and operation of IETF working groups. It also describes the formal
-relationship between IETF participants WG and the Internet
+relationship among IETF participants, WG participants,and the Internet
 Engineering Steering Group (IESG) and the basic duties of IETF
 participants, including WG Chairs, WG participants, and IETF Area
 Directors.
@@ -50,85 +48,82 @@ Directors.
 The Internet, a loosely-organized international collaboration of
 autonomous, interconnected networks, supports host-to-host
 communication through voluntary adherence to open protocols and
-procedures defined by Internet Standards.  There are also many
+procedures defined by Internet Standards. There are also many
 isolated interconnected networks, which are not connected to the
 global Internet but use the Internet Standards. Internet Standards
-are developed in the Internet Engineering Task Force (IETF).  This
+are developed in the Internet Engineering Task Force (IETF). This
 document defines guidelines and procedures for IETF working groups.
-The Internet Standards Process of the IETF is defined in [1]. The
-organizations involved in the IETF Standards Process are described
-in {{ref-2}} as are the roles of specific individuals.
+The Internet Standards Process of the IETF is defined in {{PROCESS}}.
+The
+entities involved in that process are described
+in {{BCP11}}.
+Where this document and that one conflict, this one should be
+considered definitive, as {{BCP11}} is intended to give an
+overview.
 
 The IETF is a large, open community of network designers, operators,
 vendors, users, and researchers concerned with the Internet and the
 technology used on it. The primary activities of the IETF are
 performed by committees known as working groups. There are currently
-more than 100 working groups. (See the IETF web page for an up-to-
-date list of IETF Working Groups - [](http://www.ietf.org.)) Working
-groups tend to have a narrow focus and a lifetime bounded by the
+more than 125 working groups. (See the
+[DataTracker list of active working groups](https://datatracker.ietf.org/wg/).)
+Working groups tend to have a narrow focus and a lifetime bounded by the
 completion of a specific set of tasks, although there are exceptions.
 
 For management purposes, the IETF working groups are collected
-together into areas, with each area having a separate focus.  For
-example, the security area deals with the development of security-
-related technology.  Each IETF area is managed by one or two Area
-Directors (ADs).  There are currently 8 areas in the IETF but the
-number changes from time to time.  (See the IETF web page for a list
-of the current areas, the Area Directors for each area, and a list of
-which working groups are assigned to each area.)
+together into *areas*, with each area having a separate focus.
+Each IETF area is managed by one or more Area
+Directors (ADs). There are currently seven areas in the IETF but the
+number changes from time to time. The Datatracker link above also lists the
+areas, and the ADs.
 
-In many areas, the Area Directors have formed an advisory group or
-directorate.  These comprise experienced members of the IETF and the
-technical community represented by the area.  The specific name and
+In many areas, the Area Directors have formed an advisory group called
+a *directorate*. These comprise experienced members of the IETF and the
+technical community represented by the area. The specific name and
 the details of the role for each group differ from area to area, but
 the primary intent is that these groups assist the Area Director(s),
-e.g., with the review of specifications produced in the area.
+primarily with the review of specifications produced in the area.
 
 The IETF area directors are selected by a nominating committee, which
-also selects an overall chair for the IETF.  The nominations process
-is described in {{RFC2282}}.
+also selects an overall chair for the IETF. The nominations process
+is described in {{BCP10}}.
 
 The area directors sitting as a body, along with the IETF Chair,
 comprise the Internet Engineering Steering Group (IESG). The IETF
 Executive Director is an ex-officio participant of the IESG, as are
 the IAB Chair and a designated Internet Architecture Board (IAB)
-liaison.  The IESG approves IETF Standards and approves the
-publication of other IETF documents.  (See [1].)
+liaison. The IESG approves IETF Standards and approves the
+publication of other IETF documents. (See {{PROCESS}}.)
 
-A small IETF Secretariat provides staff and administrative support
+The IETF Secretariat provides staff and administrative support
 for the operation of the IETF.
 
-There is no formal membership in the IETF.  Participation is open to
-all.  This participation may be by on-line contribution, attendance
-at face-to-face sessions, or both.  Anyone from the Internet
+There is no formal membership in the IETF. Participation is open to
+all. This participation may be by on-line contribution, attendance
+at face-to-face sessions, or both. Anyone from the Internet
 community who has the time and interest is urged to participate in
 IETF meetings and any of its on-line working group discussions.
 Participation is by individual technical contributors, rather than by
 formal representatives of organizations.
 
+{::boilerplate bcp14-tagged}
+
 This document defines procedures and guidelines for the formation and
 operation of working groups in the IETF. It defines the relations of
 working groups to other bodies within the IETF. The duties of working
 group Chairs and Area Directors with respect to the operation of the
-working group are also defined.  When used in this document the key
-words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" are to be
-interpreted as described in RFC 2119 {{RFC2119}}.  RFC 2119 defines the use
-of these key words to help make the intent of standards track
-documents as clear as possible.  The same key words are used in this
-document to help smooth WG operation and reduce the chance for
-confusion about the processes.
+working group are also defined.
 
 ## IETF approach to standardization
 
-Familiarity with The Internet Standards Process [1] is essential for
+Familiarity with The Internet Standards Process {{PROCESS}} is essential for
 a complete understanding of the philosophy, procedures and guidelines
 described in this document.
 
 
 ## Roles within a Working Group
 
-The document, "Organizations Involved in the IETF Standards Process" {{RFC2028}} describes the roles of a number of individuals within a working
+The document, "Organizations Involved in the IETF Standards Process" {{BCP11}} describes the roles of a number of individuals within a working
 group, including the working group chair and the document editor.
 These descriptions are expanded later in this document.
 
@@ -147,14 +142,14 @@ proceed through the formal steps detailed in this section.
 
 Working groups are typically created to address a specific problem or
 to produce one or more specific deliverables (a guideline, standards
-specification, etc.).  Working groups are generally expected to be
-short-lived in nature.  Upon completion of its goals and achievement
+specification, etc.). Working groups are generally expected to be
+short-lived in nature. Upon completion of its goals and achievement
 of its objectives, the working group is terminated. A working group
-may also be terminated for other reasons (see section 4).
+may also be terminated for other reasons (see {{wg-termination}}).
 Alternatively, with the concurrence of the IESG, Area Director, the
 WG Chair, and the WG participants, the objectives or assignment of
 the working group may be extended by modifying the working group's
-charter through a rechartering process (see section 5).
+charter through a rechartering process (see {{wg-recharter}}).
 
 ## Criteria for formation
 
@@ -185,12 +180,12 @@ the Area Director(s) and the IESG will consider several issues:
   > produce the desired result (e.g., a protocol specification)?
   > Working groups require considerable effort, including management
   > of the working group process, editing of working group documents,
-  > and contributing to the document text.  IETF experience suggests
+  > and contributing to the document text. IETF experience suggests
   > that these roles typically cannot all be handled by one person; a
   > minimum of four or five active participants in the management
   > positions are typically required in addition to a minimum of one
   > or two dozen people that will attend the working group meetings
-  > and contribute on the mailing list.  NOTE: The interest must be
+  > and contribute on the mailing list. NOTE: The interest must be
   > broad enough that a working group would not be seen as merely the
   > activity of a single vendor.
 
@@ -207,7 +202,7 @@ the Area Director(s) and the IESG will consider several issues:
   > of the technology?  There are many Internet-related technologies
   > that may be interesting to IETF members but in some cases the IETF
   > may not be in a position to effect the course of the technology in
-  > the "real world".  This can happen, for example, if the technology
+  > the "real world". This can happen, for example, if the technology
   > is being developed by another standards body or an industry
   > consortium.
 
@@ -239,9 +234,9 @@ the group through the chartering process.
 The formation of a working group requires a charter which is
 primarily negotiated between a prospective working group Chair and
 the relevant Area Director(s), although final approval is made by the
-IESG with advice from the Internet Architecture Board (IAB).  A
+IESG with advice from the Internet Architecture Board (IAB). A
 charter is a contract between a working group and the IETF to perform
-a set of tasks.  A charter:
+a set of tasks. A charter:
 
 
 
@@ -264,7 +259,7 @@ working group before submitting the charter to the IESG and IAB for
 approval.
 
 Charters may be renegotiated periodically to reflect the current
-status, organization or goals of the working group (see section 5).
+status, organization or goals of the working group (see {{wg-recharter}}).
 Hence, a charter is a contract between the IETF and the working group
 which is committing to meet explicit milestones and delivering
 specific "products".
@@ -273,32 +268,32 @@ Specifically, each charter consists of the following sections:
 
 
 
-Working group name
+Working group name:
 : A working group name should be reasonably descriptive or
   identifiable. Additionally, the group shall define an acronym
   (maximum 8 printable ASCII characters) to reference the group in
   the IETF directories, mailing lists, and general documents.
 
 
-Chair(s)
+Chair(s):
 : The working group may have one or more Chairs to perform the
   administrative functions of the group. The email address(es) of
-  the Chair(s) shall be included.  Generally, a working group is
+  the Chair(s) shall be included. Generally, a working group is
   limited to two chairs.
 
 
-Area and Area Director(s)
+Area and Area Director(s):
 : The name of the IETF area with which the working group is
   affiliated and the name and electronic mail address of the
   associated Area Director(s).
 
 
-Responsible Area Director
+Responsible Area Director:
 : The Area Director who acts as the primary IESG contact for the
   working group.
 
 
-Mailing list
+Mailing list:
 : An IETF working group MUST have a general Internet mailing list.
   Most of the work of an IETF working group will be conducted on the
   mailing list. The working group charter MUST include:
@@ -316,43 +311,41 @@ Mailing list
      As a service to the community, the IETF Secretariat operates a
      mailing list archive for working group mailing lists. In order
      to take advantage of this service, working group mailing lists
-     MUST include the address "wg_acronym-archive@lists.ietf.org"
+     MUST include the address "wg_acronym-archive@ietf.org"
      (where "wg_acronym" is the working group acronym) in the
      mailing list in order that a copy of all mailing list messages
-     be recorded in the Secretariat's archive.  Those archives are
-     located at [](ftp://ftp.ietf.org/ietf-mail-archive.) For
+     be recorded in the Secretariat's archive. Those archives are
+     located at https://mailarchive.ietf.org/arch/browse/. For
      robustness, WGs SHOULD maintain an additional archive separate
      from that maintained by the Secretariat.
 
 
-Description of working group
+Description of working group:
 : The focus and intent of the group shall be set forth briefly. By
   reading this section alone, an individual should be able to decide
   whether this group is relevant to their own work. The first
   paragraph must give a brief summary of the problem area, basis,
-  goal(s) and approach(es) planned for the working group.  This
+  goal(s) and approach(es) planned for the working group. This
   paragraph can be used as an overview of the working group's
   effort.
 
   To facilitate evaluation of the intended work and to provide
   on-going guidance to the working group, the charter must describe the
   problem being solved and should discuss objectives and expected
-  impact with respect to:
+  impact with respect to the following:
 
-~~~~
       - Architecture
       - Operations
       - Security
       - Network management
       - Scaling
       - Transition (where applicable)
-~~~~
 
 
 
-Goals and milestones
+Goals and milestones:
 : The working group charter MUST establish a timetable for specific
-  work items.  While this may be renegotiated over time, the list of
+  work items. While this may be renegotiated over time, the list of
   milestones and dates facilitates the Area Director's tracking of
   working group progress and status, and it is indispensable to
   potential participants identifying the critical moments for input.
@@ -360,77 +353,77 @@ Goals and milestones
   showing specific achievement; e.g., "Internet-Draft finished" is
   fine, but "discuss via email" is not. It is helpful to specify
   milestones for every 3-6 months, so that progress can be gauged
-  easily.  This milestone list is expected to be updated
-  periodically (see section 5).
+  easily. This milestone list is expected to be updated
+  periodically (see {{wg-recharter}}).
 
-  An example of a WG charter is included as Appendix A.
+  An example of a WG charter is included as {{sample}}.
 
 
 
-## Charter review & approval
+## Charter review and approval
 
 Proposed working groups often comprise technically competent
 participants who are not familiar with the history of Internet
-architecture or IETF processes.  This can, unfortunately, lead to
-good working group consensus about a bad design.  To facilitate
+architecture or IETF processes. This can, unfortunately, lead to
+good working group consensus about a bad design. To facilitate
 working group efforts, an Area Director may assign a Consultant from
-among the ranks of senior IETF participants.  (Consultants are
-described in section 6.)  At the discretion of the Area Director,
+among the ranks of senior IETF participants. Consultants are
+described in {{consultants}}. At the discretion of the Area Director,
 approval of a new WG may be withheld in the absence of sufficient
 consultant resources.
 
 Once the Area Director (and the Area Directorate, as the Area
 Director deems appropriate) has approved the working group charter,
 the charter is submitted for review by the IAB and approval by the
-IESG.  After a review period of at least a week the proposed charter
+IESG. After a review period of at least a week the proposed charter
 is posted to the IETF-announce mailing list as a public notice that
-the formation of the working group is being considered.  At the same
+the formation of the working group is being considered. At the same
 time the proposed charter is also posted to the "new-work" mailing
-list.  This mailing list has been created to let qualified
+list. This mailing list has been created to let qualified
 representatives from other standards organizations know about pending
-IETF working groups.  After another review period lasting at least a
+IETF working groups. After another review period lasting at least a
 week the IESG MAY approve the charter as-is, it MAY request that
 changes be made in the charter, or MAY decline to approve chartering
 of the working group
 
 If the IESG approves the formation of the working group it remands
 the approved charter to the IETF Secretariat who records and enters
-the information into the IETF tracking database.  The working group
+the information into the IETF tracking database. The working group
 is announced to the IETF-announce a by the IETF Secretariat.
 
 
 ## Birds of a Feather (BOF)
 
 Often it is not clear whether an issue merits the formation of a
-working group.  To facilitate exploration of the issues the IETF
+working group. To facilitate exploration of the issues the IETF
 offers the possibility of a Birds of a Feather (BOF) session, as well
 as the early formation of an email list for preliminary discussion.
 In addition, a BOF may serve as a forum for a single presentation or
 discussion, without any intent to form a working group.
 
 A BOF is a session at an IETF meeting which permits "market research"
-and technical "brainstorming".  Any individual may request permission
+and technical "brainstorming". Any individual may request permission
 to hold a BOF on a subject. The request MUST be filed with a relevant
 Area Director who must approve a BOF before it can be scheduled. The
 person who requests the BOF may be asked to serve as Chair of the
 BOF.
 
 The Chair of the BOF is also responsible for providing a report on
-the outcome of the BOF.  If the Area Director approves, the BOF is
+the outcome of the BOF. If the Area Director approves, the BOF is
 then scheduled by submitting a request to agenda@ietf.org with copies
 to the Area Director(s). A BOF description and agenda are required
 before a BOF can be scheduled.
 
 Available time for BOFs is limited, and BOFs are held at the
-discretion of the ADs for an area.  The AD(s) may require additional
-assurances before authorizing a BOF.  For example,
+discretion of the ADs for an area. The AD(s) may require additional
+assurances before authorizing a BOF. For example,
 
 
 
 
 
 * The Area Director MAY require the establishment of an open email
-  list prior to authorizing a BOF.  This permits initial exchanges
+  list prior to authorizing a BOF. This permits initial exchanges
   and sharing of framework, vocabulary and approaches, in order to
   make the time spent in the BOF more productive.
 
@@ -450,9 +443,9 @@ assurances before authorizing a BOF.  For example,
 In general, a BOF on a particular topic is held only once (ONE slot
 at one IETF Plenary meeting). Under unusual circumstances Area
 Directors may, at their discretion, allow a BOF to meet for a second
-time. BOFs are not permitted to meet three times.  Note that all
+time. BOFs are not permitted to meet three times. Note that all
 other things being equal, WGs will be given priority for meeting
-space over BOFs.  Also, occasionally BOFs may be held for other
+space over BOFs. Also, occasionally BOFs may be held for other
 purposes than to discuss formation of a working group.
 
 
@@ -480,13 +473,13 @@ Usually the outcome of a BOF will be one of the following:
 # Working Group Operation
 
 The IETF has basic requirements for open and fair participation and
-for thorough consideration of technical alternatives.  Within those
+for thorough consideration of technical alternatives. Within those
 constraints, working groups are autonomous and each determines most
 of the details of its own operation with respect to session
 participation, reaching closure, etc. The core rule for operation is
 that acceptance or agreement is achieved via working group "rough consensus".
 WG participants should specifically note the
-requirements for disclosure of conflicts of interest in {{RFC2028}}.
+requirements for disclosure of conflicts of interest in {{PROCESS}}.
 
 A number of procedural questions and issues will arise over time, and
 it is the function of the Working Group Chair(s) to manage the group
@@ -524,16 +517,16 @@ All working group actions shall be taken in a public forum, and wide
 participation is encouraged. A working group will conduct much of its
 business via electronic mail distribution lists but may meet
 periodically to discuss and review task status and progress, to
-resolve specific issues and to direct future activities.  IETF
+resolve specific issues and to direct future activities. IETF
 Plenary meetings are the primary venue for these face-to-face working
 group sessions, and it is common (though not required) that active
 "interim" face-to-face meetings, telephone conferences, or video
-conferences may also be held.  Interim meetings are subject to the
+conferences may also be held. Interim meetings are subject to the
 same rules for advance notification, reporting, open participation,
 and process, which apply to other working group meetings.
 
 All working group sessions (including those held outside of the IETF
-meetings) shall be reported by making minutes available.  These
+meetings) shall be reported by making minutes available. These
 minutes should include the agenda for the session, an account of the
 discussion including any decisions made, and a list of attendees. The
 Working Group Chair is responsible for insuring that session minutes
@@ -551,28 +544,24 @@ face sessions that is appropriate for achieving its milestones.
 Electronic mail permits the widest participation; face-to-face
 meetings often permit better focus and therefore can be more
 efficient for reaching a consensus among a core of the working group
-participants.  In determining the balance, the WG must ensure that
+participants. In determining the balance, the WG must ensure that
 its process does not serve to exclude contribution by email-only
-participants.  Decisions reached during a face-to-face meeting about
+participants. Decisions reached during a face-to-face meeting about
 topics or issues which have not been discussed on the mailing list,
 or are significantly different from previously arrived mailing list
 consensus MUST be reviewed on the mailing list.
 
-
-~~~~
-IETF Meetings
 If a WG needs a session at an IETF meeting, the Chair must apply for
 time-slots as soon as the first announcement of that IETF meeting is
-made by the IETF Secretariat to the WG-chairs list.  Session time is
+made by the IETF Secretariat to the WG-chairs list. Session time is
 a scarce resource at IETF meetings, so placing requests early will
 facilitate schedule coordination for WGs requiring the same set of
 experts.
-~~~~
 
 The application for a WG session at an IETF meeting MUST be made to
-the IETF Secretariat at the address agenda@ietf.org.  Some Area
+the IETF Secretariat at the address agenda@ietf.org. Some Area
 Directors may want to coordinate WG sessions in their area and
-request that time slots be coordinated through them.  If this is the
+request that time slots be coordinated through them. If this is the
 case it will be noted in the IETF meeting announcement. A WG
 scheduling request MUST contain:
 
@@ -595,26 +584,22 @@ scheduling request MUST contain:
 
 NOTE: While open discussion and contribution is essential to working
 group success, the Chair is responsible for ensuring forward
-progress.  When acceptable to the WG, the Chair may call for
+progress. When acceptable to the WG, the Chair may call for
 restricted participation (but not restricted attendance!) at IETF
 working group sessions for the purpose of achieving progress. The
 Working Group Chair then has the authority to refuse to grant the
 floor to any individual who is unprepared or otherwise covering
 inappropriate material, or who, in the opinion of the Chair is
-disrupting the WG process.  The Chair should consult with the Area
+disrupting the WG process. The Chair should consult with the Area
 Director(s) if the individual persists in disruptive behavior.
 
-
-~~~~
-On-line
 It can be quite useful to conduct email exchanges in the same manner
 as a face-to-face session, with published schedule and agenda, as
 well as on-going summarization and consensus polling.
-~~~~
 
 Many working group participants hold that mailing list discussion is
 the best place to consider and resolve issues and make decisions. The
-choice of operational style is made by the working group itself.  It
+choice of operational style is made by the working group itself. It
 is important to note, however, that Internet email discussion is
 possible for a much wider base of interested persons than is
 attendance at IETF meetings, due to the time and expense required to
@@ -622,16 +607,16 @@ attend.
 
 As with face-to-face sessions occasionally one or more individuals
 may engage in behavior on a mailing list which disrupts the WG's
-progress.  In these cases the Chair should attempt to discourage the
+progress. In these cases the Chair should attempt to discourage the
 behavior by communication directly with the offending individual
-rather than on the open mailing list.  If the behavior persists then
-the Chair must involve the Area Director in the issue.  As a last
+rather than on the open mailing list. If the behavior persists then
+the Chair must involve the Area Director in the issue. As a last
 resort and after explicit warnings, the Area Director, with the
 approval of the IESG, may request that the mailing list maintainer
 block the ability of the offending individual to post to the mailing
 list. (If the mailing list software permits this type of operation.)
 Even if this is done, the individual must not be prevented from
-receiving messages posted to the list.  Other methods of mailing list
+receiving messages posted to the list. Other methods of mailing list
 control may be considered but must be approved by the AD(s) and the
 IESG.
 
@@ -640,18 +625,18 @@ IESG.
 
 Working groups make decisions through a "rough consensus" process.
 IETF consensus does not require that all participants agree although
-this is, of course, preferred.  In general, the dominant view of the
-working group shall prevail.  (However, it must be noted that
+this is, of course, preferred. In general, the dominant view of the
+working group shall prevail. (However, it must be noted that
 "dominance" is not to be determined on the basis of volume or
 persistence, but rather a more general sense of agreement.) Consensus
 can be determined by a show of hands, humming, or any other means on
-which the WG agrees (by rough consensus, of course).  Note that 51%
+which the WG agrees (by rough consensus, of course). Note that 51%
 of the working group does not qualify as "rough consensus" and 99% is
-better than rough.  It is up to the Chair to determine if rough
+better than rough. It is up to the Chair to determine if rough
 consensus has been reached.
 
 It can be particularly challenging to gauge the level of consensus on
-a mailing list.  There are two different cases where a working group
+a mailing list. There are two different cases where a working group
 may be trying to understand the level of consensus via a mailing list
 discussion. But in both cases the volume of messages on a topic is
 not, by itself, a good indicator of consensus since one or two
@@ -660,34 +645,34 @@ individuals may be generating much of the traffic.
 In the case where a consensus which has been reached during a face-
 to-face meeting is being verified on a mailing list the people who
 were in the meeting and expressed agreement must be taken into
-account.  If there were 100 people in a meeting and only a few people
+account. If there were 100 people in a meeting and only a few people
 on the mailing list disagree with the consensus of the meeting then
-the consensus should be seen as being verified.  Note that enough
+the consensus should be seen as being verified. Note that enough
 time should be given to the verification process for the mailing list
 readers to understand and consider any objections that may be raised
-on the list.  The normal two week last-call period should be
+on the list. The normal two week last-call period should be
 sufficient for this.
 
 The other case is where the discussion has been held entirely over
-the mailing list.  The determination of the level of consensus may be
+the mailing list. The determination of the level of consensus may be
 harder to do in this case since most people subscribed to mailing
 lists do not actively participate in discussions on the list. It is
 left to the discretion of the working group chair how to evaluate the
-level of consensus.  The most common method used is for the working
+level of consensus. The most common method used is for the working
 group chair to state what he or she believes to be the consensus view
 and. at the same time, requests comments from the list about the
 stated conclusion.
 
 The challenge to managing working group sessions is to balance the
 need for open and fair consideration of the issues against the need
-to make forward progress.  The working group, as a whole, has the
-final responsibility for striking this balance.  The Chair has the
+to make forward progress. The working group, as a whole, has the
+final responsibility for striking this balance. The Chair has the
 responsibility for overseeing the process but may delegate direct
 process management to a formally-designated Facilitator.
 
 It is occasionally appropriate to revisit a topic, to re-evaluate
 alternatives or to improve the group's understanding of a relevant
-decision.  However, unnecessary repeated discussions on issues can be
+decision. However, unnecessary repeated discussions on issues can be
 avoided if the Chair makes sure that the main arguments in the
 discussion (and the outcome) are summarized and archived after a
 discussion has come to conclusion. It is also good practice to note
@@ -699,25 +684,21 @@ To facilitate making forward progress, a Working Group Chair may wish
 to decide to reject or defer the input from a member, based upon the
 following criteria:
 
-
-~~~~
-Old
-The input pertains to a topic that already has been resolved and is
+Old:
+: The input pertains to a topic that already has been resolved and is
 redundant with information previously available;
 
-Minor
-The input is new and pertains to a topic that has already been
+Minor:
+: The input is new and pertains to a topic that has already been
 resolved, but it is felt to be of minor import to the existing
 decision;
 
-Timing
-The input pertains to a topic that the working group has not yet
+Timing:
+: The input pertains to a topic that the working group has not yet
 opened for discussion; or
 
-Scope
-The input is outside of the scope of the working group charter.
-~~~~
-
+Scope:
+: The input is outside of the scope of the working group charter.
 
 ## Contention and appeals
 
@@ -725,19 +706,19 @@ Disputes are possible at various stages during the IETF process. As
 much as possible the process is designed so that compromises can be
 made, and genuine consensus achieved; however, there are times when
 even the most reasonable and knowledgeable people are unable to
-agree.  To achieve the goals of openness and fairness, such conflicts
+agree. To achieve the goals of openness and fairness, such conflicts
 must be resolved by a process of open review and discussion.
 
 Formal procedures for requesting a review of WG, Chair, Area Director
 or IESG actions and conducting appeals are documented in The Internet
-Standards Process [1].
+Standards Process {{PROCESS}}.
 
 
 
-# Working Group Termination
+# Working Group Termination {#wg-termination}
 
 Working groups are typically chartered to accomplish a specific task
-or tasks.  After the tasks are complete, the group will be disbanded.
+or tasks. After the tasks are complete, the group will be disbanded.
 However, if a WG produces a Proposed or Draft Standard, the WG will
 frequently become dormant rather than disband (i.e., the WG will no
 longer conduct formal activities, but the mailing list will remain
@@ -750,18 +731,15 @@ which that work was based have been modified in discussion or by
 experience, the Area Director, in consultation with the working group
 can either:
 
-
-~~~~
 1. Recharter to refocus its tasks,
 2. Choose new Chair(s), or
 3. Disband.
-~~~~
 
 If the working group disagrees with the Area Director's choice, it
 may appeal to the IESG (see section 3.4).
 
 
-# Rechartering a Working Group
+# Rechartering a Working Group {#wg-recharter}
 
 Updated milestones are renegotiated with the Area Director and the
 IESG, as needed, and then are submitted to the IESG Secretariat:
@@ -770,18 +748,18 @@ iesg-secretary@ietf.org.
 Rechartering (other than revising milestones) a working group follows
 the same procedures that the initial chartering does (see section 2).
 The revised charter must be submitted to the IESG and IAB for
-approval.  As with the initial chartering, the IESG may approve new
+approval. As with the initial chartering, the IESG may approve new
 charter as-is, it may request that changes be made in the new charter
 (including having the Working Group continue to use the old charter),
-or it may decline to approve the rechartered working group.  In the
+or it may decline to approve the rechartered working group. In the
 latter case, the working group is disbanded.
 
 
 # Staff Roles
 
-Working groups require considerable care and feeding.  In addition to
+Working groups require considerable care and feeding. In addition to
 general participation, successful working groups benefit from the
-efforts of participants filling specific functional roles.  The Area
+efforts of participants filling specific functional roles. The Area
 Director must agree to the specific people performing the WG Chair,
 and Working Group Consultant roles, and they serve at the discretion
 of the Area Director.
@@ -790,13 +768,13 @@ of the Area Director.
 
 The Working Group Chair is concerned with making forward progress
 through a fair and open process, and has wide discretion in the
-conduct of WG business.  The Chair must ensure that a number of tasks
+conduct of WG business. The Chair must ensure that a number of tasks
 are performed, either directly or by others assigned to the tasks.
 
 The Chair has the responsibility and the authority to make decisions,
 on behalf of the working group, regarding all matters of working
 group process and staffing, in conformance with the rules of the
-IETF.  The AD has the authority and the responsibility to assist in
+IETF. The AD has the authority and the responsibility to assist in
 making those decisions at the request of the Chair or when
 circumstances warrant such an intervention.
 
@@ -804,31 +782,31 @@ The Chair's responsibility encompasses at least the following:
 
 
 
-Ensure WG process and content management
+Ensure WG process and content management:
 : The Chair has ultimate responsibility for ensuring that a working
-  group achieves forward progress and meets its milestones.  The
+  group achieves forward progress and meets its milestones. The
   Chair is also responsible to ensure that the working group
-  operates in an open and fair manner.  For some working groups,
+  operates in an open and fair manner. For some working groups,
   this can be accomplished by having the Chair perform all
-  management-related activities.  In other working groups ---
+  management-related activities. In other working groups ---
   particularly those with large or divisive participation --- it is
   helpful to allocate process and/or secretarial functions to other
-  participants.  Process management pertains strictly to the style
+  participants. Process management pertains strictly to the style
   of working group interaction and not to its content. It ensures
-  fairness and detects redundancy.  The secretarial function
-  encompasses document editing.  It is quite common for a working
-  group to assign the task of specification Editor to one or two
-  participants.  Sometimes, they also are part of the design team,
+  fairness and detects redundancy. The secretarial function
+  encompasses document editing. It is quite common for a working
+  group to assign the task of document Editor to one or two
+  participants. Sometimes, they also are part of the design team,
   described below.
 
 
-Moderate the WG email list
+Moderate the WG email list:
 : The Chair should attempt to ensure that the discussions on this
   list are relevant and that they converge to consensus agreements.
   The Chair should make sure that discussions on the list are
   summarized and that the outcome is well documented (to avoid
-  repetition).  The Chair also may choose to schedule organized on-
-  line "sessions" with agenda and deliverables.  These can be
+  repetition). The Chair also may choose to schedule organized on-
+  line "sessions" with agenda and deliverables. These can be
   structured as true meetings, conducted over the course of several
   days (to allow participation across the Internet).
 
@@ -836,12 +814,12 @@ Moderate the WG email list
   sessions.
 
 
-Plan WG Sessions
+Plan WG Sessions:
 : The Chair must plan and announce all WG sessions well in advance
   (see section 3.1).
 
 
-Communicate results of sessions
+Communicate results of sessions:
 : The Chair and/or Secretary must ensure that minutes of a session
   are taken and that an attendance list is circulated (see section
   3.1).
@@ -851,7 +829,7 @@ Communicate results of sessions
   via email) on the session.
 
 
-Distribute the workload
+Distribute the workload:
 : Of course, each WG will have participants who may not be able (or
   want) to do any work at all. Most of the time the bulk of the work
   is done by a few dedicated participants. It is the task of the
@@ -859,21 +837,22 @@ Distribute the workload
   of the workload.
 
 
-Document development
+Document development:
 : Working groups produce documents and documents need authors. The
   Chair must make sure that authors of WG documents incorporate
-  changes as agreed to by the WG (see section 6.3).
+  changes as agreed to by the WG (see {#doc-editor}).
 
 
-Document publication
-: The Chair and/or Document Editor will work with the RFC Editor to
-  ensure document conformance with RFC publication requirements {{RFC2223}} and to coordinate any editorial changes suggested by the RFC
-  Editor.  A particular concern is that all participants are working
+Document publication:
+: The Chair and/or Document Editor will work with the RFC Production
+  Center to
+  ensure document conformance with RFC publication requirements {{RPCSTYLE}} and to coordinate any editorial changes suggested by the RFC
+  Editor. A particular concern is that all participants are working
   from the same version of a document at the same time.
 
 
-Document implementations
-: Under the procedures described in [1], the Chair is responsible
+Document implementations:
+: Under the procedures described in {{PROCESS}}, the Chair is responsible
   for documenting the specific implementations which qualify the
   specification for Draft or Internet Standard status along with
   documentation about testing of the interoperation of these
@@ -884,17 +863,17 @@ Document implementations
 ## WG Secretary
 
 Taking minutes and editing working group documents often is performed
-by a specifically-designated participant or set of participants.  In
+by a specifically-designated participant or set of participants. In
 this role, the Secretary's job is to record WG decisions, rather than
 to perform basic specification.
 
 
-## Document Editor
+## Document Editor {#doc-editor}
 
 Most IETF working groups focus their efforts on a document, or set of
-documents, that capture the results of the group's work.  A working
+documents, that capture the results of the group's work. A working
 group generally designates a person or persons to serve as the Editor
-for a particular document.  The Document Editor is responsible for
+for a particular document. The Document Editor is responsible for
 ensuring that the contents of the document accurately reflect the
 decisions that have been made by the working group.
 
@@ -908,8 +887,8 @@ group and that all processes are followed.
 
 When meetings tend to become distracted or divisive, it often is
 helpful to assign the task of "process management" to one
-participant.  Their job is to oversee the nature, rather than the
-content, of participant interactions.  That is, they attend to the
+participant. Their job is to oversee the nature, rather than the
+content, of participant interactions. That is, they attend to the
 style of the discussion and to the schedule of the agenda, rather
 than making direct technical contributions themselves.
 
@@ -918,19 +897,19 @@ than making direct technical contributions themselves.
 
 It is often useful, and perhaps inevitable, for a sub-group of a
 working group to develop a proposal to solve a particular problem.
-Such a sub-group is called a design team.  In order for a design team
+Such a sub-group is called a design team. In order for a design team
 to remain small and agile, it is acceptable to have closed membership
-and private meetings.  Design teams may range from an informal chat
+and private meetings. Design teams may range from an informal chat
 between people in a hallway to a formal set of expert volunteers that
-the WG chair or AD appoints to attack a controversial problem.  The
+the WG chair or AD appoints to attack a controversial problem. The
 output of a design team is always subject to approval, rejection or
 modification by the WG as a whole.
 
 
-## Working Group Consultant
+## Working Group Consultant {#consultants}
 
 At the discretion of the Area Director, a Consultant may be assigned
-to a working group.  Consultants have specific technical background
+to a working group. Consultants have specific technical background
 appropriate to the WG and experience in Internet architecture and
 IETF process.
 
@@ -950,12 +929,12 @@ IETF.
 
 All relevant documents to be discussed at a session should be
 published and available as Internet-Drafts at least two weeks before
-a session starts.  Any document which does not meet this publication
+a session starts. Any document which does not meet this publication
 deadline can only be discussed in a working group session with the
-specific approval of the working group chair(s).  Since it is
+specific approval of the working group chair(s). Since it is
 important that working group members have adequate time to review all
 documents, granting such an exception should only be done under
-unusual conditions.  The final session agenda should be posted to the
+unusual conditions. The final session agenda should be posted to the
 working group mailing list at least two weeks before the session and
 sent at that time to agenda@ietf.org for publication on the IETF web
 site.
@@ -974,7 +953,7 @@ have no official standards status whatsoever. They may, eventually,
 turn into a standards-track document or they may sink from sight.
 Internet-Drafts are submitted to: internet-drafts@ietf.org
 
-The format of an Internet-Draft must be the same as for an RFC {{RFC2028}}.
+The format of an Internet-Draft must be the same as for an RFC.
 Further, an I-D must contain:
 
 
@@ -989,28 +968,28 @@ Further, an I-D must contain:
 
 Complete specification of requirements for an Internet-Draft are
 found in the file "1id-guidelines.txt" in the Internet-Drafts
-directory at an Internet Repository site.  The organization of the
+directory at an Internet Repository site. The organization of the
 Internet-Drafts directory is found in the file "1id-organization" in
-the Internet-Drafts directory at an Internet Repository site.  This
-file also contains the rules for naming Internet-Drafts.  (See [1]
+the Internet-Drafts directory at an Internet Repository site. This
+file also contains the rules for naming Internet-Drafts. (See {{PROCESS}}
 for more information about Internet-Drafts.)
 
 
 ## Request For Comments (RFC)
 
 The work of an IETF working group often results in publication of one
-or more documents, as part of the Request For Comments (RFCs) [1]
+or more documents, as part of the Request For Comments (RFCs) {{PROCESS}}
 series. This series is the archival publication record for the
 Internet community. A document can be written by an individual in a
 working group, by a group as a whole with a designated Editor, or by
 others not involved with the IETF.
 
 NOTE: The RFC series is a publication mechanism only and publication
-does not determine the IETF status of a document.  Status is
+does not determine the IETF status of a document. Status is
 determined through separate, explicit status labels assigned by the
-IESG on behalf of the IETF.  In other words, the reader is reminded
+IESG on behalf of the IETF. In other words, the reader is reminded
 that all Internet Standards are published as RFCs, but NOT all RFCs
-specify standards {{RFC1796}}.
+specify standards {{NOTALLSTD}}.
 
 
 ## Working Group Last-Call
@@ -1019,10 +998,10 @@ When a WG decides that a document is ready for publication it may be
 submitted to the IESG for consideration. In most cases the
 determination that a WG feels that a document is ready for
 publication is done by the WG Chair issuing a working group Last-
-Call.  The decision to issue a working group Last-Call is at the
-discretion of the WG Chair working with the Area Director.  A working
+Call. The decision to issue a working group Last-Call is at the
+discretion of the WG Chair working with the Area Director. A working
 group Last-Call serves the same purpose within a working group that
-an IESG Last-Call does in the broader IETF community (see [1]).
+an IESG Last-Call does in the broader IETF community (see {{PROCESS}}).
 
 
 ## Submission of documents
@@ -1037,10 +1016,10 @@ the WG for the advancement of a document the following must be done:
 
 * The relevant document MUST be formatted according to section 7.3.
 
-* The WG Chair MUST send email to the relevant Area Director.  A copy
-  of the request MUST be also sent to the IESG Secretariat.  The mail
+* The WG Chair MUST send email to the relevant Area Director. A copy
+  of the request MUST be also sent to the IESG Secretariat. The mail
   MUST contain the reference to the document's ID filename, and the
-  action requested.  The copy of the message to the IESG Secretariat
+  action requested. The copy of the message to the IESG Secretariat
   is to ensure that the request gets recorded by the Secretariat so
   that they can monitor the progress of the document through the
   process.
@@ -1049,7 +1028,7 @@ the WG for the advancement of a document the following must be done:
 Unless returned by the IESG to the WG for further development,
 progressing of the document is then the responsibility of the IESG.
 After IESG approval, responsibility for final disposition is the
-joint responsibility of the RFC Editor, the WG Chair and the Document
+joint responsibility of the RFC Production Center, the WG Chair and the Document
 Editor.
 
 
@@ -1064,9 +1043,9 @@ documents.
 
 Prior to the IESG beginning their deliberations on standards-track
 documents, IETF Secretariat will issue a "Last-Call" to the IETF
-mailing list (see [1]). This Last Call will announce the intention of
+mailing list (see {{PROCESS}}). This Last Call will announce the intention of
 the IESG to consider the document, and it will solicit final comments
-from the IETF within a period of two weeks.  It is important to note
+from the IETF within a period of two weeks. It is important to note
 that a Last-Call is intended as a brief, final check with the
 Internet community, to make sure that no important concerns have been
 missed or misunderstood. The Last-Call should not serve as a more
@@ -1079,16 +1058,16 @@ will lead to one of these possible conclusions:
 
 1. The document is accepted as is for the status requested.
   This fact will be announced by the IETF Secretariat to the IETF
-  mailing list and to the RFC Editor.
+  mailing list and to the RFC Production Center.
 
 1. The document is accepted as-is but not for the status requested.
   This fact will be announced by the IETF Secretariat to the IETF
-  mailing list and to the RFC Editor (see [1] for more details).
+  mailing list and to the RFC Production Center (see {{PROCESS}} for more details).
 
 1. Changes regarding content are suggested to the author(s)/WG.
   Suggestions from the IESG must be clear and direct, so as to
   facilitate working group and author correction of the
-  specification.  If the author(s)/WG can explain to the
+  specification. If the author(s)/WG can explain to the
   satisfaction of the IESG why the changes are not necessary, the
   document will be accepted for publication as under point 1, above.
   If the changes are made the revised document may be resubmitted
@@ -1108,7 +1087,7 @@ will lead to one of these possible conclusions:
   IESG feels are fatally flawed in some way.If any individual or group of individuals feels that the review
   treatment has been unfair, there is the opportunity to make a
   procedural complaint. The mechanism for this type of complaints is
-  described in [1].
+  described in {{PROCESS}}.
 
 
 
@@ -1120,49 +1099,42 @@ applications.
 
 It should be noted that all IETF working groups are required to
 examine and understand the security implications of any technology
-they develop.  This analysis must be included in any resulting RFCs
-in a Security Considerations section.  Note that merely noting a
-significant security hole is no longer sufficient.  IETF developed
+they develop. This analysis must be included in any resulting RFCs
+in a Security Considerations section. Note that merely noting a
+significant security hole is no longer sufficient. IETF developed
 technologies should not add insecurity to the environment in which
 they are run.
 
 
 # Acknowledgments
 
-This
-This revision of this document relies heavily on the previous version
-(RFC 1603) which was edited by Erik Huizer and Dave Crocker.  It has
-been reviewed by the Poisson Working Group.
+This document would not have been possible without the work of Scott Bradner,
+the editor of the previous version, and all other contributors
+to {{?RFC2418}}.
 
 
-# Appendix: Sample Working Group Charter
+# Appendix: Sample Working Group Charter {#sample}
+
+~~~~
 
 
-Working Group Name:
-: IP Telephony (iptel)
+IETF Area: Transport Area
 
-
-IETF Area:
-: Transport Area
-
-
-Chair(s):
-: Jonathan Rosenberg \<jdrosen@bell-labs.com>
+Chair(s): Jonathan Rosenberg <jdrosen@bell-labs.com>
 
 
 Transport Area Director(s):
-: Scott Bradner \<sob@harvard.edu>
-  Allyn Romanow \<allyn@mci.net>
+  Scott Bradner <sob@harvard.edu>
+  Allyn Romanow <allyn@mci.net>
 
 
-Responsible Area Director:
-: Allyn Romanow \<allyn@mci.net>
+Responsible Area Director: Allyn Romanow <allyn@mci.net>
 
 
 Mailing Lists:
-: General Discussion:iptel@lists.research.bell-labs.com
+  General Discussion:iptel@lists.research.bell-labs.com
   To Subscribe: iptel-request@lists.research.bell-labs.com
-  Archive: [](http://www.bell-labs.com/mailing-lists/siptel)
+  Archive: https://mailarchive.ietf.org/arch/browse/iptel
 
 
 Description of Working Group:
@@ -1204,7 +1176,7 @@ between an IP host and a PSTN user, a telephony gateway must be used.
 The selection of such gateways can be based on many criteria,
 including client expressed preferences, service provider preferences,
 and availability of gateways, in addition to destination telephone
-number.  Since gateways outside of the hosts' administrative domain
+number. Since gateways outside of the hosts' administrative domain
 might be used, a protocol is required to allow gateways in remote
 domains to distribute their attributes (such as PSTN connectivity,
 supported codecs, etc.) to entities in other domains which must make
@@ -1216,8 +1188,6 @@ appropriate.
 
 Goals and Milestones:
 
-
-~~~~
 May 98    Issue first Internet-Draft on service framework
 Jul 98    Submit framework ID to IESG for publication as an RFC.
 Aug 98    Issue first Internet-Draft on Call Processing Syntax
