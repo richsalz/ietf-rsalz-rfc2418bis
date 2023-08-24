@@ -5,8 +5,8 @@
 Network Working Group                                            R. Salz
 Internet-Draft                                       Akamai Technologies
 Obsoletes: 2418 (if approved)                              J. C. Klensin
-Intended status: Best Current Practice                    22 August 2023
-Expires: 23 February 2024
+Intended status: Best Current Practice                    23 August 2023
+Expires: 24 February 2024
 
 
               IETF Working Group Guidelines and Procedures
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 February 2024.
+   This Internet-Draft will expire on 24 February 2024.
 
 Copyright Notice
 
@@ -70,7 +70,7 @@ Table of Contents
    2.  Working group formation
      2.1.  Criteria for formation
      2.2.  Charter
-     2.3.  Charter review & approval
+     2.3.  Charter review and approval
      2.4.  Birds of a Feather (BOF)
    3.  Working Group Operation
      3.1.  Session planning
@@ -370,14 +370,14 @@ Table of Contents
       To facilitate evaluation of the intended work and to provide on-
       going guidance to the working group, the charter must describe the
       problem being solved and should discuss objectives and expected
-      impact with respect to:
+      impact with respect to the following:
 
-         - Architecture
-         - Operations
-         - Security
-         - Network management
-         - Scaling
-         - Transition (where applicable)
+      - Architecture
+      - Operations
+      - Security
+      - Network management
+      - Scaling
+      - Transition (where applicable)
 
    Goals and milestones:  The working group charter MUST establish a
       timetable for specific work items.  While this may be renegotiated
@@ -393,7 +393,7 @@ Table of Contents
 
       An example of a WG charter is included as Section 11.
 
-2.3.  Charter review & approval
+2.3.  Charter review and approval
 
    Proposed working groups often comprise technically competent
    participants who are not familiar with the history of Internet
@@ -566,10 +566,9 @@ Table of Contents
    or are significantly different from previously arrived mailing list
    consensus MUST be reviewed on the mailing list.
 
-   IETF Meetings
    If a WG needs a session at an IETF meeting, the Chair must apply for
    time-slots as soon as the first announcement of that IETF meeting is
-   made by the IETF Secretariat to the WG-chairs list. Session time is
+   made by the IETF Secretariat to the WG-chairs list.  Session time is
    a scarce resource at IETF meetings, so placing requests early will
    facilitate schedule coordination for WGs requiring the same set of
    experts.
@@ -606,7 +605,6 @@ Table of Contents
    disrupting the WG process.  The Chair should consult with the Area
    Director(s) if the individual persists in disruptive behavior.
 
-   On-line
    It can be quite useful to conduct email exchanges in the same manner
    as a face-to-face session, with published schedule and agenda, as
    well as on-going summarization and consensus polling.
@@ -697,21 +695,18 @@ Table of Contents
    to decide to reject or defer the input from a member, based upon the
    following criteria:
 
-   Old
-   The input pertains to a topic that already has been resolved and is
-   redundant with information previously available;
+   Old:  The input pertains to a topic that already has been resolved
+      and is redundant with information previously available;
 
-   Minor
-   The input is new and pertains to a topic that has already been
-   resolved, but it is felt to be of minor import to the existing
-   decision;
+   Minor:  The input is new and pertains to a topic that has already
+      been resolved, but it is felt to be of minor import to the
+      existing decision;
 
-   Timing
-   The input pertains to a topic that the working group has not yet
-   opened for discussion; or
+   Timing:  The input pertains to a topic that the working group has not
+      yet opened for discussion; or
 
-   Scope
-   The input is outside of the scope of the working group charter.
+   Scope:  The input is outside of the scope of the working group
+      charter.
 
 3.4.  Contention and appeals
 
@@ -742,9 +737,11 @@ Table of Contents
    experience, the Area Director, in consultation with the working group
    can either:
 
-   1. Recharter to refocus its tasks,
-   2. Choose new Chair(s), or
-   3. Disband.
+   1.  Recharter to refocus its tasks,
+
+   2.  Choose new Chair(s), or
+
+   3.  Disband.
 
    If the working group disagrees with the Area Director's choice, it
    may appeal to the IESG (see section 3.4).
